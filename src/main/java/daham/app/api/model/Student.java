@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,11 +13,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Audited
 public class Student {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column(name =  "ID")
-    private Long  id;
+    private int  id;
 
     @Column(name =  "FIRST_NAME")
     private String firstName;
